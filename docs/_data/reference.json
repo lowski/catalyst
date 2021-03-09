@@ -1,0 +1,556 @@
+{
+	"id": 0,
+	"name": "@github/catalyst",
+	"kind": 0,
+	"kindString": "Project",
+	"flags": {},
+	"originalName": "",
+	"children": [
+		{
+			"id": 31,
+			"name": "attr",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "attr.ts",
+					"line": 13,
+					"character": 20
+				}
+			],
+			"signatures": [
+				{
+					"id": 32,
+					"name": "attr",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Attr is a decorator which tags a property as one to be initialized via\n`initializeAttrs`.",
+						"text": "The signature is typed such that the property must be one of a String,\nNumber or Boolean. This matches the behavior of `initializeAttrs`.\n"
+					},
+					"typeParameter": [
+						{
+							"id": 33,
+							"name": "K",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 34,
+							"name": "proto",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "K"
+									},
+									{
+										"type": "reference",
+										"name": "attrValue"
+									}
+								],
+								"name": "Record"
+							}
+						},
+						{
+							"id": 35,
+							"name": "key",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "K"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "void"
+					}
+				}
+			]
+		},
+		{
+			"id": 1,
+			"name": "bind",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "bind.ts",
+					"line": 7,
+					"character": 20
+				}
+			],
+			"signatures": [
+				{
+					"id": 2,
+					"name": "bind",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 3,
+							"name": "controller",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "HTMLElement"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "void"
+					}
+				}
+			]
+		},
+		{
+			"id": 28,
+			"name": "controller",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "controller.ts",
+					"line": 13,
+					"character": 26
+				}
+			],
+			"signatures": [
+				{
+					"id": 29,
+					"name": "controller",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Controller is a decorator to be used over a class that extends HTMLElement.\nIt will automatically `register()` the component in the customElement\nregistry, as well as ensuring `bind(this)` is called on `connectedCallback`,\nwrapping the classes `connectedCallback` method if needed."
+					},
+					"parameters": [
+						{
+							"id": 30,
+							"name": "classObject",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "CustomElement"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "void"
+					}
+				}
+			]
+		},
+		{
+			"id": 10,
+			"name": "findTarget",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "findtarget.ts",
+					"line": 13,
+					"character": 26
+				}
+			],
+			"signatures": [
+				{
+					"id": 11,
+					"name": "findTarget",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "findTarget will run `querySelectorAll` against the given controller, plus\nits shadowRoot, returning any the first child that:",
+						"text": " - Matches the selector of `[data-target~=\"tag.name\"]` where tag is the\n tagName of the given HTMLElement, and `name` is the given `name` argument.\n\n - Closest ascendant of the element, that matches the tagname of the\n controller, is the specific instance of the controller itself - in other\n words it is not nested in other controllers of the same type.\n\n"
+					},
+					"parameters": [
+						{
+							"id": 12,
+							"name": "controller",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "HTMLElement"
+							}
+						},
+						{
+							"id": 13,
+							"name": "name",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "Element"
+							},
+							{
+								"type": "intrinsic",
+								"name": "undefined"
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"id": 14,
+			"name": "findTargets",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "findtarget.ts",
+					"line": 25,
+					"character": 27
+				}
+			],
+			"signatures": [
+				{
+					"id": 15,
+					"name": "findTargets",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 16,
+							"name": "controller",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "HTMLElement"
+							}
+						},
+						{
+							"id": 17,
+							"name": "name",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "Element"
+						}
+					}
+				}
+			]
+		},
+		{
+			"id": 4,
+			"name": "listenForBind",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "bind.ts",
+					"line": 25,
+					"character": 29
+				}
+			],
+			"signatures": [
+				{
+					"id": 5,
+					"name": "listenForBind",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Set up observer that will make sure any actions that are dynamically\ninjected into `el` will be bound to it's controller.",
+						"text": "This returns a Subscription object which you can call `unsubscribe()` on to\nstop further live updates.\n"
+					},
+					"parameters": [
+						{
+							"id": 6,
+							"name": "el",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "Node"
+							},
+							"defaultValue": "..."
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Subscription"
+					}
+				}
+			]
+		},
+		{
+			"id": 7,
+			"name": "register",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "register.ts",
+					"line": 10,
+					"character": 24
+				}
+			],
+			"signatures": [
+				{
+					"id": 8,
+					"name": "register",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Register the controller as a custom element.",
+						"text": "The classname is converted to a approriate tag name.\n\nExample: HelloController => hello-controller\n"
+					},
+					"parameters": [
+						{
+							"id": 9,
+							"name": "classObject",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "CustomElement"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "void"
+					}
+				}
+			]
+		},
+		{
+			"id": 18,
+			"name": "target",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "target.ts",
+					"line": 10,
+					"character": 22
+				}
+			],
+			"signatures": [
+				{
+					"id": 19,
+					"name": "target",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Target is a decorator which - when assigned to a property field on the\nclass - will override that class field, turning it into a Getter which\nreturns a call to `findTarget(this, key)` where `key` is the name of the\nproperty field. In other words, `@target foo` becomes a getter for\n`findTarget(this, 'foo')`."
+					},
+					"typeParameter": [
+						{
+							"id": 20,
+							"name": "K",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 21,
+							"name": "proto",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "K"
+									},
+									{
+										"type": "intrinsic",
+										"name": "unknown"
+									}
+								],
+								"name": "Record"
+							}
+						},
+						{
+							"id": 22,
+							"name": "key",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "K"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "void"
+					}
+				}
+			]
+		},
+		{
+			"id": 23,
+			"name": "targets",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "target.ts",
+					"line": 26,
+					"character": 23
+				}
+			],
+			"signatures": [
+				{
+					"id": 24,
+					"name": "targets",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"shortText": "Targets is a decorator which - when assigned to a property field on the\nclass - will override that class field, turning it into a Getter which\nreturns a call to `findTargets(this, key)` where `key` is the name of the\nproperty field. In other words, `@targets foo` becomes a getter for\n`findTargets(this, 'foo')`."
+					},
+					"typeParameter": [
+						{
+							"id": 25,
+							"name": "K",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"parameters": [
+						{
+							"id": 26,
+							"name": "proto",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "K"
+									},
+									{
+										"type": "intrinsic",
+										"name": "unknown"
+									}
+								],
+								"name": "Record"
+							}
+						},
+						{
+							"id": 27,
+							"name": "key",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "K"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "void"
+					}
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Functions",
+			"kind": 64,
+			"children": [
+				31,
+				1,
+				28,
+				10,
+				14,
+				4,
+				7,
+				18,
+				23
+			]
+		}
+	],
+	"sources": [
+		{
+			"fileName": "index.ts",
+			"line": 1,
+			"character": 0
+		}
+	]
+}
